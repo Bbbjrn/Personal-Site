@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Björn Johansson Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gallery img {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .gallery img.active {
+            opacity: 1;
+        }
+        .thumbnail-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            overflow-x: auto;
+            position: absolute;
+            bottom: 1rem;
+            width: 100%;
+        }
+        .thumbnail-nav img {
+            width: 4rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        .thumbnail-nav img.active {
+            opacity: 1;
+            border: 2px solid black;
+        }
+        .thumbnail-nav img:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body class="bg-white h-screen w-screen flex">
+    <div class="container flex w-full h-full">
+        <nav class="sidebar w-1/4 h-full pt-40 pl-10 p-6 bg-gray-50 border-r border-gray-200">
+            <a href="index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
+            <ul class="main-nav mb-8">
+                <li class="mb-4"><a href="/assets/pages/miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
+                <li class="mb-4"><a href="/assets/pages/archive.html" class="text-gray-700 hover:text-gray-900">Archive <span class="text-sm font-light text-gray-500">2024</span></a></li>
+                <li class="mb-4"><a href="/assets/pages/anamnesis.html" class="text-gray-700 hover:text-gray-900">Anamnesis <span class="text-sm font-light text-gray-500">2024</span></a></li>
+                <li class="mb-4"><a href="/assets/pages/working-memory.html" class="text-gray-700 hover:text-gray-900">Working Memory <span class="text-sm font-light text-gray-500">2024</span></a></li>
+                <li class="mb-4"><a href="/assets/pages/the-world-doesn't-end.html" class="text-gray-700 hover:text-gray-900">The World Doesn't End <span class="text-sm font-light text-gray-500">2023</span></a></li>
+            </ul>
+            <ul class="secondary-nav">
+                <li class="mb-4"><a href="/assets/pages/about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-gray-900">Resume</a></li>
+            </ul>
+        </nav>
+        <main class="content w-full lg:w-3/4 h-full p-6 flex flex-col items-center relative">
+            <div class="gallery relative w-full h-full flex items-center justify-center">
+                <img src="/assets/images/BjörnJohansson_Archive01_2024_web.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-contain active">
+                <img src="/assets/images/BjörnJohansson_Archive02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w-full h-full object-contain">
+                <img src="/assets/images/BjörnJohansson_Archive03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w-full h-full object-contain">
+            </div>
+            <div class="thumbnail-nav absolute bottom-0 w-full">
+                <img src="/assets/images/BjörnJohansson_Archive01_2024_web.jpg" alt="Thumbnail 1" class="active">
+                <img src="/assets/images/BjörnJohansson_Archive02_2024_web.jpg" alt="Thumbnail 2">
+                <img src="/assets/images/BjörnJohansson_Archive03_2024_web.jpg" alt="Thumbnail 3">
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.gallery img');
+            const thumbnails = document.querySelectorAll('.thumbnail-nav img');
+            let currentImageIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                    thumbnails[i].classList.toggle('active', i === index);
+                });
+            }
+
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    showImage(currentImageIndex);
+                });
+            });
+
+            setInterval(() => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showImage(currentImageIndex);
+            }, 4000);
+        });
+    </script>
+</body>
+
+</html>
