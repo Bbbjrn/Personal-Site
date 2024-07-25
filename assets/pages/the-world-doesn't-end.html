@@ -38,6 +38,17 @@
         .thumbnail-nav img:hover {
             opacity: 0.7;
         }
+        .home-button {
+            position: sticky;
+            top: 0;
+            background: inherit;
+            z-index: 10;
+            padding: 10px 0;  
+        }
+        .current-page {
+            color: #2d3748; /* Darker shade of gray for active page */
+            font-weight: bold; /* Optional: Make the active page link bold */
+        }
     </style>
 </head>
 
@@ -53,7 +64,7 @@
         </ul>
         <ul class="secondary-nav">
             <li class="mb-4"><a href="/assets/pages/about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-gray-900">Resume</a></li>
+            <li><a href="/assets/pages/resume.html" class="text-gray-700 hover:text-gray-900">Resume</a></li>
         </ul>
     </nav>
         <main class="content w-3/4 h-full p-6 flex flex-col items-center relative">
@@ -71,9 +82,8 @@
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd11_2023_web.jpg" alt="Photo 11" class="absolute inset-0 w-full h-full object-contain">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd12_2023_web.jpg" alt="Photo 12" class="absolute inset-0 w-full h-full object-contain">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd013_2023_web.jpg" alt="Photo 13" class="absolute inset-0 w-full h-full object-contain">
-
             </div>
-            <div class="thumbnail-nav pb-10 pt-10">
+            <div class="thumbnail-nav pb-60">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd01_2023_web.jpg" alt="Thumbnail 1" class="active">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd02_2023_web.jpg" alt="Thumbnail 2">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd03_2023_web.jpg" alt="Thumbnail 3">
@@ -87,6 +97,7 @@
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd11_2023_web.jpg" alt="Thumbnail 11">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd12_2023_web.jpg" alt="Thumbnail 12">
                 <img src="/assets/images/BjörnJohansson_TheWorldDoesn'tEnd013_2023_web.jpg" alt="Thumbnail 13">
+
             </div>
         </main>
     </div>
