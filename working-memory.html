@@ -85,7 +85,13 @@
             }
             .content {
                 width: 100%;
-                padding: 20px;
+                padding: 60px 20px 20px; /* Adjusted padding to accommodate the fixed nav bar */
+            }
+            .thumbnail-nav {
+                position: relative;
+                bottom: 0;
+                margin-top: 0;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -99,21 +105,21 @@
             <li class="mb-4"><a href="./archive.html" class="text-gray-700 hover:text-gray-900">Archive <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="./miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="./anamnesis.html" class="text-gray-700 hover:text-gray-900">Anamnesis <span class="text-sm font-light text-gray-500">2024</span></a></li>
-            <li class="mb-4"><a href="./working-memory.html" class="text-gray-700 hover:text-gray-900">Working Memory <span class="text-sm font-light text-gray-500">2024</span></a></li>
+            <li class="mb-4"><a href="./working-memory.html" class="text-gray-700 hover:text-gray-900 current-page">Working Memory <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="./the-world-doesn't-end.html" class="text-gray-700 hover:text-gray-900">The World Doesn't End <span class="text-sm font-light text-gray-500">2023</span></a></li>
         </ul>
         <ul class="secondary-nav">
-            <li class="mb-4"><a href="./assets/pages/about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
+            <li class="mb-4"><a href="./about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
             <li><a href="./resume.html" class="text-gray-700 hover:text-gray-900">Resume</a></li>
         </ul>
     </nav>
     <main class="content w-3/4 h-full p-6 flex flex-col items-center relative">
         <div class="gallery relative w-full h-full flex items-center justify-center">
             <img src="./assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-contain active">
-            <img src="./assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w-full h-full object-contain">
-            <img src="./assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w-full h-full object-contain">
+            <img src="./assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w/full h/full object-contain">
+            <img src="./assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w/full h/full object-contain">
         </div>
-        <div class="thumbnail-nav pb-60">
+        <div class="thumbnail-nav">
             <img src="./assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Thumbnail 1" class="active">
             <img src="./assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Thumbnail 2">
             <img src="./assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Thumbnail 3">
@@ -166,3 +172,4 @@
 </body>
 
 </html>
+
