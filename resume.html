@@ -105,26 +105,26 @@
             </ul>
 
             <div class="mt-8">
-                <p class="mb-1"><strong class="text-gray-600">Email:</strong> <a href="mailto:bjorntimothyjohansson@gmail.com" class="text-blue-500 hover:underline">bjorntimothyjohansson@gmail.com</a></p>
-                <p><strong class="text-gray-600">Phone:</strong> <a href="tel:8014557181" class="text-blue-500 hover:underline">801.455.7181</a></p>
+                <p class="mb-1"><strong class="text-gray-600">Email:</strong> <a href="mailto:bjorn@bjornjohanssonart.com" class="text-blue-500 hover:underline">bjorn@bjornjohanssonart.com</a></p>
             </div>
         </div>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.main-nav a, .secondary-nav a');
-            
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.classList.add('current-page');
-                }
-            });
-
             const toggleButton = document.querySelector('.nav-toggle');
             const sidebar = document.querySelector('.sidebar');
             toggleButton.addEventListener('click', () => {
                 sidebar.classList.toggle('show');
+            });
+
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinks = document.querySelectorAll('.main-nav a, .secondary-nav a');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.includes(currentPath)) {
+                    link.classList.add('current-page');
+                }
             });
         });
     </script>

@@ -170,20 +170,16 @@
         toggleButton.addEventListener('click', () => {
             sidebar.classList.toggle('show');
         });
+
         document.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname;
+            const currentPath = window.location.pathname.split("/").pop();
             const navLinks = document.querySelectorAll('.main-nav a, .secondary-nav a');
             
             navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
+                const href = link.getAttribute('href');
+                if (href.includes(currentPath)) {
                     link.classList.add('current-page');
                 }
-            });
-
-            const toggleButton = document.querySelector('.nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-            toggleButton.addEventListener('click', () => {
-                sidebar.classList.toggle('show');
             });
         });
     </script>

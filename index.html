@@ -135,6 +135,15 @@
             toggleButton.addEventListener('click', () => {
                 sidebar.classList.toggle('show');
             });
+            
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.main-nav a, .secondary-nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('current-page');
+                }
+            });
         });
     </script>
 </body>
