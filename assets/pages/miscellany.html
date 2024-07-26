@@ -92,8 +92,8 @@
     <nav class="sidebar w-full md:w-1/4 h-auto md:h-full pt-10 md:pt-40 pl-4 md:pl-10 p-6 bg-gray-50 border-r border-gray-200">
         <a href="./index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
         <ul class="main-nav mb-8">
-            <li class="mb-4"><a href="/assets/pages/miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/archive.html" class="text-gray-700 hover:text-gray-900">Archive <span class="text-sm font-light text-gray-500">2024</span></a></li>
+            <li class="mb-4"><a href="/assets/pages/miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/anamnesis.html" class="text-gray-700 hover:text-gray-900">Anamnesis <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/working-memory.html" class="text-gray-700 hover:text-gray-900">Working Memory <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/the-world-doesn't-end.html" class="text-gray-700 hover:text-gray-900">The World Doesn't End <span class="text-sm font-light text-gray-500">2023</span></a></li>
@@ -145,6 +145,23 @@
         const sidebar = document.querySelector('.sidebar');
         toggleButton.addEventListener('click', () => {
             sidebar.classList.toggle('show');
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.main-nav a, .secondary-nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('current-page');
+                }
+            });
+
+            const toggleButton = document.querySelector('.nav-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('show');
+            });
         });
     </script>
 </body>
