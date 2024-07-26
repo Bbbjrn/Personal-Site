@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Björn Johansson Anamnesis</title>
+    <title>Björn Johansson Working Memory</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         .gallery img {
             opacity: 0;
@@ -43,18 +42,55 @@
             top: 0;
             background: inherit;
             z-index: 10;
-            padding: 10px 0;  
+            padding: 10px 0;
         }
         .current-page {
-            color: #2d3748; /* Darker shade of gray for active page */
-            font-weight: bold; /* Optional: Make the active page link bold */
+            color: #2d3748;
+            font-weight: bold;
+        }
+        .nav-toggle {
+            display: none;
+            color: #2d3748; /* Darker gray */
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                width: 100%;
+                height: auto;
+                padding-top: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+                position: absolute;
+                background: white;
+                z-index: 10;
+            }
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 20;
+            }
+            .sidebar.show {
+                display: block;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 
 <body class="bg-white h-screen w-screen flex">
+    <button class="nav-toggle text-l text-gray-600 focus:outline-none">Menu</button>
     <nav class="sidebar w-full md:w-1/4 h-auto md:h-full pt-10 md:pt-40 pl-4 md:pl-10 p-6 bg-gray-50 border-r border-gray-200">
-        <a href="index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
+        <a href="/index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
         <ul class="main-nav mb-8">
             <li class="mb-4"><a href="/assets/pages/miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/archive.html" class="text-gray-700 hover:text-gray-900">Archive <span class="text-sm font-light text-gray-500">2024</span></a></li>
@@ -64,23 +100,21 @@
         </ul>
         <ul class="secondary-nav">
             <li class="mb-4"><a href="/assets/pages/about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-gray-900">Resume</a></li>
+            <li><a href="/assets/pages/resume.html" class="text-gray-700 hover:text-gray-900">Resume</a></li>
         </ul>
     </nav>
-        <main class="content w-3/4 h-full p-6 flex flex-col items-center relative">
-            <div class="gallery relative w-full h-full flex items-center justify-center">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-contain active">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w-full h-full object-contain">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w-full h-full object-contain">
-            </div>
-            <div class="thumbnail-nav pb-60">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Thumbnail 1" class="active">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Thumbnail 2">
-                <img src="/assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Thumbnail 3">
-
-            </div>
-        </main>
-    </div>
+    <main class="content w-3/4 h-full p-6 flex flex-col items-center relative">
+        <div class="gallery relative w-full h-full flex items-center justify-center">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-contain active">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w-full h-full object-contain">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w-full h-full object-contain">
+        </div>
+        <div class="thumbnail-nav pb-60">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Thumbnail 1" class="active">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Thumbnail 2">
+            <img src="/assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Thumbnail 3">
+        </div>
+    </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('.gallery img');
@@ -105,6 +139,12 @@
                 currentImageIndex = (currentImageIndex + 1) % images.length;
                 showImage(currentImageIndex);
             }, 4000);
+        });
+
+        const toggleButton = document.querySelector('.nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
         });
     </script>
 </body>

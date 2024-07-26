@@ -19,17 +19,55 @@
             top: 0;
             background: inherit;
             z-index: 10;
-            padding: 10px 0;  
+            padding: 10px 0;
         }
         .current-page {
-            color: #2d3748; /* Darker shade of gray for active page */
+            color: #2d3748;
+            font-weight: bold;
+        }
+        .nav-toggle {
+            display: none;
+            color: #2d3748; /* Darker gray */
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                width: 100%;
+                height: auto;
+                padding-top: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+                position: absolute;
+                background: white;
+                z-index: 10;
+            }
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 20;
+            }
+            .sidebar.show {
+                display: block;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
         }
     </style>
-    </head>
-    
-    <body class="bg-white h-screen w-screen flex">
+</head>
+
+<body class="bg-white h-screen w-screen flex">
+    <button class="nav-toggle text-l text-gray-600 focus:outline-none">Menu</button>
     <nav class="sidebar w-full md:w-1/4 h-auto md:h-full pt-10 md:pt-40 pl-4 md:pl-10 p-6 bg-gray-50 border-r border-gray-200">
-        <a href="index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
+        <a href="/index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
         <ul class="main-nav mb-8">
             <li class="mb-4"><a href="/assets/pages/miscellany.html" class="text-gray-700 hover:text-gray-900">Bone Dance <span class="text-sm font-light text-gray-500">2024</span></a></li>
             <li class="mb-4"><a href="/assets/pages/archive.html" class="text-gray-700 hover:text-gray-900">Archive <span class="text-sm font-light text-gray-500">2024</span></a></li>
@@ -68,7 +106,6 @@
             </div>
         </div>
     </main>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const currentPath = window.location.pathname;
@@ -78,6 +115,12 @@
                 if (link.getAttribute('href') === currentPath) {
                     link.classList.add('current-page');
                 }
+            });
+
+            const toggleButton = document.querySelector('.nav-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('show');
             });
         });
     </script>
