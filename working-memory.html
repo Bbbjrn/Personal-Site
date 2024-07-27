@@ -6,95 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Björn Johansson Working Memory</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <style>
-        .gallery img {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .gallery img.active {
-            opacity: 1;
-        }
-        .thumbnail-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            overflow-x: auto;
-            position: absolute;
-            bottom: 1rem;
-            width: 100%;
-        }
-        .thumbnail-nav img {
-            width: 4rem;
-            margin: 0 0.5rem;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-        .thumbnail-nav img.active {
-            opacity: 1;
-            border: 1px solid black;
-        }
-        .thumbnail-nav img:hover {
-            opacity: 0.7;
-        }
-        .home-button {
-            position: sticky;
-            top: 0;
-            background: inherit;
-            z-index: 10;
-            padding: 10px 0;
-        }
-        .current-page {
-            color: #2d3748;
-            font-weight: bold;
-        }
-        .nav-toggle {
-            display: none;
-            color: #2d3748; /* Darker gray */
-            text-decoration: underline;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-                width: 100%;
-                height: auto;
-                padding-top: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-                position: absolute;
-                background: white;
-                z-index: 10;
-            }
-            .nav-toggle {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                z-index: 20;
-            }
-            .sidebar.show {
-                display: block;
-            }
-            .content {
-                width: 100%;
-                padding: 60px 20px 20px; /* Adjusted padding to accommodate the fixed nav bar */
-            }
-            .thumbnail-nav {
-                position: relative;
-                bottom: 0;
-                margin-top: 0;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+   
 </head>
 
 <body class="bg-white h-screen w-screen flex">
@@ -115,9 +32,9 @@
     </nav>
     <main class="content w-3/4 h-full p-6 flex flex-col items-center relative">
         <div class="gallery relative w-full h-full flex items-center justify-center">
-            <img src="./assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-contain active">
-            <img src="./assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2" class="absolute inset-0 w/full h/full object-contain">
-            <img src="./assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3" class="absolute inset-0 w/full h/full object-contain">
+            <img src="./assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Photo 1" class="active">
+            <img src="./assets/images/BjörnJohansson_WorkingMemory02_2024_web.jpg" alt="Photo 2">
+            <img src="./assets/images/BjörnJohansson_WorkingMemory03_2024_web.jpg" alt="Photo 3">
         </div>
         <div class="thumbnail-nav">
             <img src="./assets/images/BjörnJohansson_WorkingMemory01_2024_web.jpg" alt="Thumbnail 1" class="active">
