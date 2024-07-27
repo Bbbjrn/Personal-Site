@@ -1,0 +1,57 @@
+.gallery img {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.gallery img.active {
+    opacity: 1;
+}
+.home-button {
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+    padding: 10px 0;
+}
+.current-page {
+    color: #2d3748;
+    font-weight: bold;
+}
+.nav-toggle {
+    display: none;
+    color: #2d3748; /* Darker gray */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+.nav-toggle:focus {
+    outline: none;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: absolute;
+        background: white;
+        z-index: 10;
+    }
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+    }
+    .sidebar.show {
+        display: block;
+    }
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+}

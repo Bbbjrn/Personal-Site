@@ -10,66 +10,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <style>
-        .gallery img {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .gallery img.active {
-            opacity: 1;
-        }
-        .home-button {
-            position: sticky;
-            top: 0;
-            background: inherit;
-            z-index: 10;
-            padding: 10px 0;
-        }
-        .current-page {
-            color: #2d3748;
-            font-weight: bold;
-        }
-        .nav-toggle {
-            display: none;
-            color: #2d3748; /* Darker gray */
-            text-decoration: underline;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-                width: 100%;
-                height: auto;
-                padding-top: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-                position: absolute;
-                background: white;
-                z-index: 10;
-            }
-            .nav-toggle {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                z-index: 20;
-            }
-            .sidebar.show {
-                display: block;
-            }
-            .content {
-                width: 100%;
-                padding: 20px;
-            }
-        }
-    </style>
+    <link href="./assets/css/home.css" rel="stylesheet">
 </head>
 
 <body class="bg-white h-screen w-screen flex">
-    <button class="nav-toggle text-l text-gray-600 focus:outline-none">Menu</button>
+    <button class="nav-toggle text-l text-gray-600 focus:outline-none">&#9776;</button>
     <nav class="sidebar w-full md:w-1/4 h-auto md:h-full pt-10 md:pt-40 pl-4 md:pl-10 p-6 bg-gray-50 border-r border-gray-200">
         <a href="./index.html" class="home-button text-2xl font-regular text-gray-500 mb-8 block">BJÖRN JOHANSSON</a>
         <ul class="main-nav mb-8">
